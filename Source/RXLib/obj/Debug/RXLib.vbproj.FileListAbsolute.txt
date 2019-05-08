@@ -1,0 +1,11 @@
+C:\Users\IRizerX\source\repos\RXLib\RXLib\obj\Debug\RXLib.vbprojAssemblyReference.cache
+C:\Users\IRizerX\source\repos\RXLib\RXLib\obj\Debug\RXLib.Resources.resources
+C:\Users\IRizerX\source\repos\RXLib\RXLib\obj\Debug\RXLib.vbproj.GenerateResource.cache
+C:\Users\IRizerX\source\repos\RXLib\RXLib\obj\Debug\RXLib.vbproj.CoreCompileInputs.cache
+C:\Users\IRizerX\source\repos\RXLib\RXLib\bin\Debug\RXLib 2.2.dll.config
+C:\Users\IRizerX\source\repos\RXLib\RXLib\bin\Debug\RXLib 2.2.dll
+C:\Users\IRizerX\source\repos\RXLib\RXLib\bin\Debug\RXLib 2.2.pdb
+C:\Users\IRizerX\source\repos\RXLib\RXLib\bin\Debug\RXLib 2.2.xml
+C:\Users\IRizerX\source\repos\RXLib\RXLib\obj\Debug\RXLib 2.2.dll
+C:\Users\IRizerX\source\repos\RXLib\RXLib\obj\Debug\RXLib 2.2.xml
+C:\Users\IRizerX\source\repos\RXLib\RXLib\obj\Debug\RXLib 2.2.pdb

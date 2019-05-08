@@ -1,0 +1,81 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+RXLib 2.2
+</name>
+</assembly>
+<members>
+<member name="T:RXLib.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:RXLib.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:RXLib.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:RXLib.My.Resources.Resources.Edit">
+<summary>
+  Looks up a localized string similar to first_name={0}&amp;email={1}&amp;username={2}.
+</summary>
+</member>
+<member name="P:RXLib.My.Resources.Resources.hash_Comments">
+<summary>
+  Looks up a localized string similar to 97b41c52301f77ce508f55e66d17620e.
+</summary>
+</member>
+<member name="P:RXLib.My.Resources.Resources.hash_explore">
+<summary>
+  Looks up a localized string similar to ecd67af449fb6edab7c69a205413bfa7.
+</summary>
+</member>
+<member name="P:RXLib.My.Resources.Resources.hash_hashtag">
+<summary>
+  Looks up a localized string similar to f92f56d47dc7a55b606908374b43a314.
+</summary>
+</member>
+<member name="P:RXLib.My.Resources.Resources.hash_likes">
+<summary>
+  Looks up a localized string similar to e0f59e4a1c8d78d0161873bc2ee7ec44.
+</summary>
+</member>
+<member name="P:RXLib.My.Resources.Resources.hash_timeline">
+<summary>
+  Looks up a localized string similar to 1d67abddd9b9a9554d64cc05ce1e3ffd.
+</summary>
+</member>
+<member name="P:RXLib.My.Resources.Resources.Posts">
+<summary>
+  Looks up a localized string similar to {&quot;__typename&quot;:&quot;.*?&quot;,&quot;id&quot;:&quot;(.*?)&quot;.
+</summary>
+</member>
+<member name="P:RXLib.My.Resources.Resources.Postshashtag">
+<summary>
+  Looks up a localized string similar to &quot;__typename&quot;:&quot;.*?&quot;,&quot;id&quot;:&quot;(.*?)&quot;,&quot;e.
+</summary>
+</member>
+<member name="P:RXLib.My.Resources.Resources.User_agent">
+<summary>
+  Looks up a localized string similar to Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763.
+</summary>
+</member>
+<member name="P:RXLib.My.Resources.Resources.users_comments">
+<summary>
+  Looks up a localized string similar to &quot;username&quot;:&quot;(.*?)&quot;},&quot;vie.
+</summary>
+</member>
+<member name="P:RXLib.My.Resources.Resources.users_likes">
+<summary>
+  Looks up a localized string similar to &quot;id&quot;:&quot;\d+&quot;,&quot;username&quot;:&quot;(.*?)&quot;,&quot;full_name.
+</summary>
+</member>
+</members>
+</doc>
