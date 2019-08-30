@@ -22,7 +22,7 @@ Namespace My.Resources
     '''<summary>
     '''  A strongly-typed resource class, for looking up localized strings, etc.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
@@ -133,6 +133,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to {&quot;node&quot;:{&quot;id&quot;:&quot;\d+&quot;,&quot;username&quot;:&quot;(.*?)&quot;,.
+        '''</summary>
+        Friend ReadOnly Property rgxusfls() As String
+            Get
+                Return ResourceManager.GetString("rgxusfls", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763.
         '''</summary>
         Friend ReadOnly Property User_agent() As String
@@ -156,6 +165,24 @@ Namespace My.Resources
         Friend ReadOnly Property users_likes() As String
             Get
                 Return ResourceManager.GetString("users_likes", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to c76146de99bb02f6415203be841dd25a.
+        '''</summary>
+        Friend ReadOnly Property usfollowers() As String
+            Get
+                Return ResourceManager.GetString("usfollowers", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to d04b0a864b4b54837c0d870b0e77e076.
+        '''</summary>
+        Friend ReadOnly Property usfollowing() As String
+            Get
+                Return ResourceManager.GetString("usfollowing", resourceCulture)
             End Get
         End Property
     End Module

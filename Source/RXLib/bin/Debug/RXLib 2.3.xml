@@ -2,7 +2,7 @@
 <doc>
 <assembly>
 <name>
-RXLib 2.2
+RXLib 2.3
 </name>
 </assembly>
 <members>
@@ -62,6 +62,11 @@ RXLib 2.2
   Looks up a localized string similar to &quot;__typename&quot;:&quot;.*?&quot;,&quot;id&quot;:&quot;(.*?)&quot;,&quot;e.
 </summary>
 </member>
+<member name="P:RXLib.My.Resources.Resources.rgxusfls">
+<summary>
+  Looks up a localized string similar to {&quot;node&quot;:{&quot;id&quot;:&quot;\d+&quot;,&quot;username&quot;:&quot;(.*?)&quot;,.
+</summary>
+</member>
 <member name="P:RXLib.My.Resources.Resources.User_agent">
 <summary>
   Looks up a localized string similar to Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763.
@@ -75,6 +80,16 @@ RXLib 2.2
 <member name="P:RXLib.My.Resources.Resources.users_likes">
 <summary>
   Looks up a localized string similar to &quot;id&quot;:&quot;\d+&quot;,&quot;username&quot;:&quot;(.*?)&quot;,&quot;full_name.
+</summary>
+</member>
+<member name="P:RXLib.My.Resources.Resources.usfollowers">
+<summary>
+  Looks up a localized string similar to c76146de99bb02f6415203be841dd25a.
+</summary>
+</member>
+<member name="P:RXLib.My.Resources.Resources.usfollowing">
+<summary>
+  Looks up a localized string similar to d04b0a864b4b54837c0d870b0e77e076.
 </summary>
 </member>
 </members>

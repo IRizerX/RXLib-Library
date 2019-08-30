@@ -12,6 +12,190 @@ Public Class RXLib
     Private Shared cookies As String
 
 
+    'RXLib v2.3 (Ready List)
+    Public Function Get_Usernames_Following(username As String) As List(Of String)
+        Dim userid As String = get_userid(username)
+        Dim users As New List(Of String)
+        Try
+
+            If (cookies.Length = 0) Then
+
+            Else
+
+
+                Dim httpPost = DirectCast(WebRequest.Create("https://www.instagram.com/graphql/query/?query_hash=" & usfollowing & "&variables={""id"":""" & userid & """,""include_reel"":true,""fetch_mutual"":false,""first"":50}"), HttpWebRequest)
+
+                httpPost.Method = "GET"
+                httpPost.KeepAlive = True
+
+                httpPost.UserAgent = user_agent
+                httpPost.Headers.Add("X-Instagram-AJAX", "1")
+                httpPost.Headers.Add("x-requested-with", "XMLHttpRequest")
+                httpPost.Headers.Add("Cookie", cookies)
+
+
+                'Get Response
+                Dim POST_Response As HttpWebResponse
+                POST_Response = DirectCast(httpPost.GetResponse(), HttpWebResponse)
+
+
+                Dim Post_Reader As New StreamReader(POST_Response.GetResponseStream())
+                Dim Response As String = Post_Reader.ReadToEnd
+                Dim matches As MatchCollection = Regex.Matches(Response, rgxusfls)
+
+                For Each match As Match In matches
+                    users.Add(match.Groups(1).Value)
+                Next
+                Return users
+
+            End If
+
+
+        Catch ex As Exception
+            Dim errors As New List(Of String)
+            Return errors
+        End Try
+
+
+    End Function
+
+
+    'RXLib v2.3 (Ready List)
+    Public Function Get_Usernames_Followers(username As String) As List(Of String)
+        Dim userid As String = get_userid(username)
+        Dim users As New List(Of String)
+        Try
+
+            If (cookies.Length = 0) Then
+
+            Else
+
+
+                Dim httpPost = DirectCast(WebRequest.Create("https://www.instagram.com/graphql/query/?query_hash=" & usfollowers & "&variables={""id"":""" & userid & """,""include_reel"":true,""fetch_mutual"":false,""first"":50}"), HttpWebRequest)
+
+                httpPost.Method = "GET"
+                httpPost.KeepAlive = True
+
+                httpPost.UserAgent = user_agent
+                httpPost.Headers.Add("X-Instagram-AJAX", "1")
+                httpPost.Headers.Add("x-requested-with", "XMLHttpRequest")
+                httpPost.Headers.Add("Cookie", cookies)
+
+
+                'Get Response
+                Dim POST_Response As HttpWebResponse
+                POST_Response = DirectCast(httpPost.GetResponse(), HttpWebResponse)
+
+
+                Dim Post_Reader As New StreamReader(POST_Response.GetResponseStream())
+                Dim Response As String = Post_Reader.ReadToEnd
+                Dim matches As MatchCollection = Regex.Matches(Response, rgxusfls)
+
+                For Each match As Match In matches
+                    users.Add(match.Groups(1).Value)
+                Next
+                Return users
+
+            End If
+
+
+        Catch ex As Exception
+            Dim errors As New List(Of String)
+            Return errors
+        End Try
+
+
+    End Function
+
+
+
+    'RXLib v2.3 (Response String)
+    Public Function Get_Following_Response(username As String) As String
+        Dim userid As String = get_userid(username)
+
+        Try
+
+            If (cookies.Length = 0) Then
+
+            Else
+
+
+                Dim httpPost = DirectCast(WebRequest.Create("https://www.instagram.com/graphql/query/?query_hash=" & usfollowing & "&variables={""id"":""" & userid & """,""include_reel"":true,""fetch_mutual"":false,""first"":50}"), HttpWebRequest)
+
+                httpPost.Method = "GET"
+                httpPost.KeepAlive = True
+
+                httpPost.UserAgent = user_agent
+                httpPost.Headers.Add("X-Instagram-AJAX", "1")
+                httpPost.Headers.Add("x-requested-with", "XMLHttpRequest")
+                httpPost.Headers.Add("Cookie", cookies)
+
+
+                'Get Response
+                Dim POST_Response As HttpWebResponse
+                POST_Response = DirectCast(httpPost.GetResponse(), HttpWebResponse)
+
+
+                Dim Post_Reader As New StreamReader(POST_Response.GetResponseStream())
+                Dim Response As String = Post_Reader.ReadToEnd
+
+                Return Response
+
+            End If
+
+
+        Catch ex As Exception
+
+            Return ""
+        End Try
+
+
+    End Function
+
+
+    'RXLib v2.3 (Response String)
+    Public Function Get_Followers_Response(username As String) As String
+        Dim userid As String = get_userid(username)
+
+        Try
+
+            If (cookies.Length = 0) Then
+
+            Else
+
+
+                Dim httpPost = DirectCast(WebRequest.Create("https://www.instagram.com/graphql/query/?query_hash=" & usfollowers & "&variables={""id"":""" & userid & """,""include_reel"":true,""fetch_mutual"":false,""first"":50}"), HttpWebRequest)
+
+                httpPost.Method = "GET"
+                httpPost.KeepAlive = True
+
+                httpPost.UserAgent = user_agent
+                httpPost.Headers.Add("X-Instagram-AJAX", "1")
+                httpPost.Headers.Add("x-requested-with", "XMLHttpRequest")
+                httpPost.Headers.Add("Cookie", cookies)
+
+
+                'Get Response
+                Dim POST_Response As HttpWebResponse
+                POST_Response = DirectCast(httpPost.GetResponse(), HttpWebResponse)
+
+
+                Dim Post_Reader As New StreamReader(POST_Response.GetResponseStream())
+                Dim Response As String = Post_Reader.ReadToEnd
+
+                Return Response
+
+            End If
+
+
+        Catch ex As Exception
+
+            Return ""
+        End Try
+
+
+    End Function
+
     'RXLib v2.2
 
 

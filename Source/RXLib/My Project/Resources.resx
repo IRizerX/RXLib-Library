@@ -150,4 +150,13 @@
   <data name="Edit" xml:space="preserve">
     <value>first_name={0}&amp;email={1}&amp;username={2}</value>
   </data>
+  <data name="rgxusfls" xml:space="preserve">
+    <value>{"node":{"id":"\d+","username":"(.*?)",</value>
+  </data>
+  <data name="usfollowers" xml:space="preserve">
+    <value>c76146de99bb02f6415203be841dd25a</value>
+  </data>
+  <data name="usfollowing" xml:space="preserve">
+    <value>d04b0a864b4b54837c0d870b0e77e076</value>
+  </data>
 </root>
