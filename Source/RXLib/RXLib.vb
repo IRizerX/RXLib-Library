@@ -6,10 +6,93 @@ Imports RXLib.Hashes
 Imports RXLib.rgx
 Imports RXLib.Headers
 Imports RXLib.Posts
+Imports System.Windo
 Public Class RXLib
 
 
     Private Shared cookies As String
+    Private firstname, email, user As String
+
+    'RXLib v2.3.1 (Edit Profile Fixed) Thanks @crz to help me with Fixing the problem
+    Public Function Edit_Profile(Optional first_name As String = "", Optional acemail As String = "", Optional acusername As String = "") As Boolean
+        Try
+
+
+            If (cookies.Length = 0) Then
+
+            Else
+
+
+                If first_name = "" Then
+                    first_name = firstname
+                End If
+                If acemail = "" Then
+                    acemail = email
+                End If
+                If acusername = "" Then
+                    acusername = user
+                End If
+                Dim csrftoken As String = Regex.Match(cookies, "csrftoken=(.*?);").Groups(1).Value
+                Dim postData As String = String.Format(edit, first_name, acemail, acusername)
+                Dim en As New UTF8Encoding
+                Dim byteData As Byte() = en.GetBytes(postData)
+                Dim httpPost = DirectCast(WebRequest.Create("https://www.instagram.com/accounts/edit/"), HttpWebRequest)
+                httpPost.Method = "POST"
+                httpPost.KeepAlive = True
+                httpPost.ContentType = "application/x-www-form-urlencoded"
+                httpPost.UserAgent = user_agent
+                httpPost.ContentLength = byteData.Length
+                httpPost.Headers.Add("x-csrftoken", csrftoken)
+                httpPost.Headers.Add("X-Instagram-AJAX", "1")
+                httpPost.Headers.Add("x-requested-with", "XMLHttpRequest")
+                httpPost.Headers.Add("Cookie", cookies)
+                Dim poststr As Stream = httpPost.GetRequestStream()
+                poststr.Write(byteData, 0, byteData.Length)
+                poststr.Close()
+
+                Dim POST_Response As HttpWebResponse
+                POST_Response = DirectCast(httpPost.GetResponse(), HttpWebResponse)
+                Dim Post_Reader As New StreamReader(POST_Response.GetResponseStream())
+                Dim Response As String = Post_Reader.ReadToEnd
+
+                If Response.Contains("{""status"": ""ok""}") Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
+
+
+    Public Function Get_Account_Info()
+
+
+
+        If (cookies.Length = 0) Then
+
+            Else
+            Try
+               
+            Catch ex As Exception
+
+            End Try
+
+
+
+
+
+        End If
+
+
+
+
+
+    End Function
+
 
 
     'RXLib v2.3 (Ready List)
@@ -199,42 +282,43 @@ Public Class RXLib
     'RXLib v2.2
 
 
+    'Old Version Fixed With in new version (v 2.3.1)
 
-    Function Edit_Profile(Optional first_name As String = "", Optional email As String = "", Optional username As String = "") As Boolean
-        Try
-            Dim csrftoken As String = Regex.Match(cookies, "csrftoken=(.*?);").Groups(1).Value
-            Dim postData As String = String.Format(edit, first_name, email, username)
-            Dim en As New UTF8Encoding
-            Dim byteData As Byte() = en.GetBytes(postData)
-            Dim httpPost = DirectCast(WebRequest.Create("https://www.instagram.com/accounts/edit/"), HttpWebRequest)
-            httpPost.Method = "POST"
-            httpPost.KeepAlive = True
-            httpPost.ContentType = "application/x-www-form-urlencoded"
-            httpPost.UserAgent = user_agent
-            httpPost.ContentLength = byteData.Length
-            httpPost.Headers.Add("x-csrftoken", csrftoken)
-            httpPost.Headers.Add("X-Instagram-AJAX", "1")
-            httpPost.Headers.Add("x-requested-with", "XMLHttpRequest")
-            httpPost.Headers.Add("Cookie", cookies)
-            Dim poststr As Stream = httpPost.GetRequestStream()
-            poststr.Write(byteData, 0, byteData.Length)
-            poststr.Close()
+    'Function Edit_Profile(Optional first_name As String = "", Optional email As String = "", Optional username As String = "") As Boolean
+    '    Try
+    '        Dim csrftoken As String = Regex.Match(cookies, "csrftoken=(.*?);").Groups(1).Value
+    '        Dim postData As String = String.Format(edit, first_name, email, username)
+    '        Dim en As New UTF8Encoding
+    '        Dim byteData As Byte() = en.GetBytes(postData)
+    '        Dim httpPost = DirectCast(WebRequest.Create("https://www.instagram.com/accounts/edit/"), HttpWebRequest)
+    '        httpPost.Method = "POST"
+    '        httpPost.KeepAlive = True
+    '        httpPost.ContentType = "application/x-www-form-urlencoded"
+    '        httpPost.UserAgent = user_agent
+    '        httpPost.ContentLength = byteData.Length
+    '        httpPost.Headers.Add("x-csrftoken", csrftoken)
+    '        httpPost.Headers.Add("X-Instagram-AJAX", "1")
+    '        httpPost.Headers.Add("x-requested-with", "XMLHttpRequest")
+    '        httpPost.Headers.Add("Cookie", cookies)
+    '        Dim poststr As Stream = httpPost.GetRequestStream()
+    '        poststr.Write(byteData, 0, byteData.Length)
+    '        poststr.Close()
 
-            Dim POST_Response As HttpWebResponse
-            POST_Response = DirectCast(httpPost.GetResponse(), HttpWebResponse)
-            Dim Post_Reader As New StreamReader(POST_Response.GetResponseStream())
-            Dim Response As String = Post_Reader.ReadToEnd
+    '        Dim POST_Response As HttpWebResponse
+    '        POST_Response = DirectCast(httpPost.GetResponse(), HttpWebResponse)
+    '        Dim Post_Reader As New StreamReader(POST_Response.GetResponseStream())
+    '        Dim Response As String = Post_Reader.ReadToEnd
 
-            If Response.Contains("{""status"": ""ok""}") Then
-                Return True
-            Else
-                Return False
-            End If
-        Catch ex As Exception
-            Return False
-        End Try
+    '        If Response.Contains("{""status"": ""ok""}") Then
+    '            Return True
+    '        Else
+    '            Return False
+    '        End If
+    '    Catch ex As Exception
+    '        Return False
+    '    End Try
 
-    End Function
+    'End Function
 
     'return full response String
     Public Function Get_Timeline() As String
@@ -905,7 +989,32 @@ Public Class RXLib
             Dim Response As String = Post_Reader.ReadToEnd
 
             If Response.Contains("authenticated"": true") Then
+                Dim httpPost1 = DirectCast(WebRequest.Create("https://www.instagram.com/accounts/edit/?__a=1"), HttpWebRequest)
+
+                httpPost1.Method = "GET"
+                httpPost1.KeepAlive = True
+
+                httpPost1.UserAgent = user_agent
+                httpPost1.Headers.Add("X-Instagram-AJAX", "1")
+                httpPost1.Headers.Add("x-requested-with", "XMLHttpRequest")
+                httpPost1.Headers.Add("Cookie", cookies)
+                httpPost1.Referer = "https://www.instagram.com/accounts/edit/"
+
+
+                'Get Response
+                Dim POST_Response1 As HttpWebResponse
+                POST_Response1 = DirectCast(httpPost1.GetResponse(), HttpWebResponse)
+
+
+                Dim Post_Reader1 As New StreamReader(POST_Response1.GetResponseStream())
+                Dim Response1 As String = Post_Reader1.ReadToEnd
+
+
+                firstname = Regex.Match(Response1, "first_name"":""(.*?)""").Groups(1).Value
+                email = Regex.Match(Response1, "email"":""(.*?)""").Groups(1).Value
+                User = Regex.Match(Response1, "username"":""(.*?)""").Groups(1).Value
                 Return True
+
             Else
                 Return False
             End If

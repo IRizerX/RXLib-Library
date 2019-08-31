@@ -31,3 +31,14 @@ C:\Users\YASSER\Documents\GitHub\RXLib-Library\Source\RXLib\obj\Debug\RXLib.vbpr
 C:\Users\YASSER\Documents\GitHub\RXLib-Library\Source\RXLib\obj\Debug\RXLib 2.3.dll
 C:\Users\YASSER\Documents\GitHub\RXLib-Library\Source\RXLib\obj\Debug\RXLib 2.3.xml
 C:\Users\YASSER\Documents\GitHub\RXLib-Library\Source\RXLib\obj\Debug\RXLib 2.3.pdb
+G:\VB.NET\RXLib-Library\Source\RXLib\obj\Debug\RXLib.vbprojAssemblyReference.cache
+G:\VB.NET\RXLib-Library\Source\RXLib\obj\Debug\RXLib.Resources.resources
+G:\VB.NET\RXLib-Library\Source\RXLib\obj\Debug\RXLib.vbproj.GenerateResource.cache
+G:\VB.NET\RXLib-Library\Source\RXLib\obj\Debug\RXLib.vbproj.CoreCompileInputs.cache
+G:\VB.NET\RXLib-Library\Source\RXLib\bin\Debug\RXLib 2.3.1.dll.config
+G:\VB.NET\RXLib-Library\Source\RXLib\bin\Debug\RXLib 2.3.1.dll
+G:\VB.NET\RXLib-Library\Source\RXLib\bin\Debug\RXLib 2.3.1.pdb
+G:\VB.NET\RXLib-Library\Source\RXLib\bin\Debug\RXLib 2.3.1.xml
+G:\VB.NET\RXLib-Library\Source\RXLib\obj\Debug\RXLib 2.3.1.dll
+G:\VB.NET\RXLib-Library\Source\RXLib\obj\Debug\RXLib 2.3.1.xml
+G:\VB.NET\RXLib-Library\Source\RXLib\obj\Debug\RXLib 2.3.1.pdb
