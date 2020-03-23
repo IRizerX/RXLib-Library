@@ -42,3 +42,23 @@ G:\VB.NET\RXLib-Library\Source\RXLib\bin\Debug\RXLib 2.3.1.xml
 G:\VB.NET\RXLib-Library\Source\RXLib\obj\Debug\RXLib 2.3.1.dll
 G:\VB.NET\RXLib-Library\Source\RXLib\obj\Debug\RXLib 2.3.1.xml
 G:\VB.NET\RXLib-Library\Source\RXLib\obj\Debug\RXLib 2.3.1.pdb
+C:\Users\Crash\Desktop\RXLib-Library-master\Source\RXLib\bin\Debug\RXLib 2.3.1.pdb
+C:\Users\Crash\Desktop\RXLib-Library-master\Source\RXLib\bin\Debug\RXLib 2.3.1.xml
+C:\Users\Crash\Desktop\RXLib-Library-master\Source\RXLib\obj\Debug\RXLib.vbprojResolveAssemblyReference.cache
+C:\Users\Crash\Desktop\RXLib-Library-master\Source\RXLib\obj\Debug\RXLib.Resources.resources
+C:\Users\Crash\Desktop\RXLib-Library-master\Source\RXLib\obj\Debug\RXLib.vbproj.GenerateResource.Cache
+C:\Users\Crash\Desktop\RXLib-Library-master\Source\RXLib\obj\Debug\RXLib 2.3.1.xml
+C:\Users\Crash\Desktop\RXLib-Library-master\Source\RXLib\obj\Debug\RXLib 2.3.1.pdb
+C:\Users\Crash\Desktop\RXLib-Library-master\Source\RXLib\obj\Debug\RXLib.Ahmed_AlJabari.resources
+C:\Users\Crash\Desktop\RXLib-Library-master\Source\RXLib\bin\Debug\RXLib 2.3.1.exe.config
+C:\Users\Crash\Desktop\RXLib-Library-master\Source\RXLib\bin\Debug\RXLib 2.3.1.exe
+C:\Users\Crash\Desktop\RXLib-Library-master\Source\RXLib\obj\Debug\RXLib 2.3.1.exe
+E:\VB.NET\RXLib Library master - Edited\RXLib Library master - Edited\Source\RXLib\bin\Debug\RXLib 2.4.dll.config
+E:\VB.NET\RXLib Library master - Edited\RXLib Library master - Edited\Source\RXLib\bin\Debug\RXLib 2.4.dll
+E:\VB.NET\RXLib Library master - Edited\RXLib Library master - Edited\Source\RXLib\bin\Debug\RXLib 2.4.pdb
+E:\VB.NET\RXLib Library master - Edited\RXLib Library master - Edited\Source\RXLib\bin\Debug\RXLib 2.4.xml
+E:\VB.NET\RXLib Library master - Edited\RXLib Library master - Edited\Source\RXLib\obj\Debug\RXLib.Resources.resources
+E:\VB.NET\RXLib Library master - Edited\RXLib Library master - Edited\Source\RXLib\obj\Debug\RXLib.vbproj.GenerateResource.cache
+E:\VB.NET\RXLib Library master - Edited\RXLib Library master - Edited\Source\RXLib\obj\Debug\RXLib 2.4.dll
+E:\VB.NET\RXLib Library master - Edited\RXLib Library master - Edited\Source\RXLib\obj\Debug\RXLib 2.4.xml
+E:\VB.NET\RXLib Library master - Edited\RXLib Library master - Edited\Source\RXLib\obj\Debug\RXLib 2.4.pdb

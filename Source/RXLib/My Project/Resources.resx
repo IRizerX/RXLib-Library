@@ -159,4 +159,7 @@
   <data name="usfollowing" xml:space="preserve">
     <value>d04b0a864b4b54837c0d870b0e77e076</value>
   </data>
+  <data name="Phon_User_agent" xml:space="preserve">
+    <value>Instagram 133.0.0.32.120 Android (28/9; 420dpi; 1080x2094; samsung; SM-N950F; greatlte; samsungexynos8895; en_US; 204019468)</value>
+  </data>
 </root>

@@ -2,7 +2,7 @@
 <doc>
 <assembly>
 <name>
-RXLib 2.3
+RXLib 2.4
 </name>
 </assembly>
 <members>
@@ -50,6 +50,11 @@ RXLib 2.3
 <member name="P:RXLib.My.Resources.Resources.hash_timeline">
 <summary>
   Looks up a localized string similar to 1d67abddd9b9a9554d64cc05ce1e3ffd.
+</summary>
+</member>
+<member name="P:RXLib.My.Resources.Resources.Phon_User_agent">
+<summary>
+  Looks up a localized string similar to Instagram 133.0.0.32.120 Android (28/9; 420dpi; 1080x2094; samsung; SM-N950F; greatlte; samsungexynos8895; en_US; 204019468).
 </summary>
 </member>
 <member name="P:RXLib.My.Resources.Resources.Posts">

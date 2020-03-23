@@ -115,6 +115,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Instagram 133.0.0.32.120 Android (28/9; 420dpi; 1080x2094; samsung; SM-N950F; greatlte; samsungexynos8895; en_US; 204019468).
+        '''</summary>
+        Friend ReadOnly Property Phon_User_agent() As String
+            Get
+                Return ResourceManager.GetString("Phon_User_agent", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to {&quot;__typename&quot;:&quot;.*?&quot;,&quot;id&quot;:&quot;(.*?)&quot;.
         '''</summary>
         Friend ReadOnly Property Posts() As String
