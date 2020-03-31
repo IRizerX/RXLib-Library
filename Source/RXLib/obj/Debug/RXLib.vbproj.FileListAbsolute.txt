@@ -62,3 +62,12 @@ E:\VB.NET\RXLib Library master - Edited\RXLib Library master - Edited\Source\RXL
 E:\VB.NET\RXLib Library master - Edited\RXLib Library master - Edited\Source\RXLib\obj\Debug\RXLib 2.4.dll
 E:\VB.NET\RXLib Library master - Edited\RXLib Library master - Edited\Source\RXLib\obj\Debug\RXLib 2.4.xml
 E:\VB.NET\RXLib Library master - Edited\RXLib Library master - Edited\Source\RXLib\obj\Debug\RXLib 2.4.pdb
+C:\Users\IRizerX\Documents\GitHub\RXLib-Library\Source\RXLib\bin\Debug\RXLib 2.4.1.dll.config
+C:\Users\IRizerX\Documents\GitHub\RXLib-Library\Source\RXLib\bin\Debug\RXLib 2.4.1.dll
+C:\Users\IRizerX\Documents\GitHub\RXLib-Library\Source\RXLib\bin\Debug\RXLib 2.4.1.pdb
+C:\Users\IRizerX\Documents\GitHub\RXLib-Library\Source\RXLib\bin\Debug\RXLib 2.4.1.xml
+C:\Users\IRizerX\Documents\GitHub\RXLib-Library\Source\RXLib\obj\Debug\RXLib.Resources.resources
+C:\Users\IRizerX\Documents\GitHub\RXLib-Library\Source\RXLib\obj\Debug\RXLib.vbproj.GenerateResource.cache
+C:\Users\IRizerX\Documents\GitHub\RXLib-Library\Source\RXLib\obj\Debug\RXLib 2.4.1.dll
+C:\Users\IRizerX\Documents\GitHub\RXLib-Library\Source\RXLib\obj\Debug\RXLib 2.4.1.xml
+C:\Users\IRizerX\Documents\GitHub\RXLib-Library\Source\RXLib\obj\Debug\RXLib 2.4.1.pdb

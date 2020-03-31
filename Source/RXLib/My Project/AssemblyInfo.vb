@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("RXLib v2.4")>
+<Assembly: AssemblyTitle("RXLib v2.4.1")>
 <Assembly: AssemblyDescription("Library For Instagram Created By IRizerX")>
 <Assembly: AssemblyCompany("Instagram: @_irizerx_")>
-<Assembly: AssemblyProduct("RXLib v2.4")>
+<Assembly: AssemblyProduct("RXLib v2.4.1")>
 <Assembly: AssemblyCopyright("Copyright ©  2020")>
 <Assembly: AssemblyTrademark("")>
 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("2.4.0.0")>
-<Assembly: AssemblyFileVersion("2.4.0.0")>
+<Assembly: AssemblyVersion("2.4.1.0")>
+<Assembly: AssemblyFileVersion("2.4.1.0")>

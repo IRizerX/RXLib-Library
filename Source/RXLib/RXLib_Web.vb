@@ -7,10 +7,191 @@ Imports RXLib.rgx
 Imports RXLib.Headers
 Imports RXLib.Posts
 Imports System.Security.Cryptography
+Imports System.Windows.Forms
 
 Public Class RXLib_Web
     Private Shared Cookies As String
     Private firstname, email, user As String
+    'RxLib v2.4.1
+#Region "By Raghad @69v2"
+
+    Public Function SetPrivate(priv As Boolean) As Boolean
+        Try
+            Dim xcsrftoken As String = Regex.Match(Cookies, "csrftoken=(.*?);").Groups(1).Value
+            Dim postData As String = String.Format($"is_private={priv}")
+            Dim byteData As Byte() = Encoding.UTF8.GetBytes(postData)
+            Dim httpPost = DirectCast(WebRequest.Create("https://www.instagram.com/accounts/set_private/"), HttpWebRequest)
+            httpPost.Method = "POST"
+            httpPost.Host = "www.instagram.com"
+            httpPost.KeepAlive = True
+            httpPost.ContentType = "application/x-www-form-urlencoded"
+            httpPost.Accept = "*/*"
+            httpPost.Headers.Add("X-Requested-With", "XMLHttpRequest")
+            httpPost.UserAgent = user_agent
+            httpPost.Headers.Add("X-CSRFToken", xcsrftoken)
+            httpPost.Headers.Add("Cookie", Cookies)
+            httpPost.ContentLength = byteData.Length
+            Dim poststr As Stream = httpPost.GetRequestStream()
+            poststr.Write(byteData, 0, byteData.Length)
+            poststr.Flush()
+            poststr.Close()
+            Dim res As String = New StreamReader(httpPost.GetResponse().GetResponseStream()).ReadToEnd()
+            If res.Contains("{""status"": ""ok""}") Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Public Function ChangePassword(oldpass As String, newpass As String) As Boolean
+        Try
+            Dim xcsrftoken As String = Regex.Match(Cookies, "csrftoken=(.*?);").Groups(1).Value
+            Dim postData As String = String.Format($"old_password={oldpass}&new_password1={newpass}&new_password2={newpass}")
+            Dim byteData As Byte() = Encoding.UTF8.GetBytes(postData)
+            Dim httpPost = DirectCast(WebRequest.Create("https://www.instagram.com/accounts/password/change/"), HttpWebRequest)
+            httpPost.Method = "POST"
+            httpPost.Host = "www.instagram.com"
+            httpPost.KeepAlive = True
+            httpPost.ContentType = "application/x-www-form-urlencoded"
+            httpPost.Accept = "*/*"
+            httpPost.Headers.Add("X-Requested-With", "XMLHttpRequest")
+            httpPost.UserAgent = user_agent
+            httpPost.Headers.Add("X-CSRFToken", xcsrftoken)
+            httpPost.Headers.Add("Cookie", Cookies)
+            httpPost.ContentLength = byteData.Length
+            Dim poststr As Stream = httpPost.GetRequestStream()
+            poststr.Write(byteData, 0, byteData.Length)
+            poststr.Flush()
+            poststr.Close()
+            Dim res As String = New StreamReader(httpPost.GetResponse().GetResponseStream()).ReadToEnd()
+            If res.Contains("{""status"": ""ok""}") Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Function EditProfile(first_name As String, email As String, username As String) As Boolean
+        Try
+            email = email.Replace("+", "%2B")
+            Dim utf8 As New UTF8Encoding
+            Dim xcsrftoken As String = Regex.Match(Cookies, "csrftoken=(.*?);").Groups(1).Value
+            Dim postData As String = $"first_name={first_name}&email={email}&username={username}"
+            Dim byteData As Byte() = utf8.GetBytes(postData)
+            Dim httpPost = DirectCast(WebRequest.Create("https://www.instagram.com/accounts/edit/"), HttpWebRequest)
+            httpPost.Method = "POST"
+            httpPost.KeepAlive = True
+            httpPost.ContentType = "application/x-www-form-urlencoded"
+            httpPost.UserAgent = ""
+            httpPost.ContentLength = byteData.Length
+            httpPost.Headers.Add("x-csrftoken", xcsrftoken)
+            httpPost.Headers.Add("X-Instagram-AJAX", "1")
+            httpPost.Headers.Add("x-requested-with", "XMLHttpRequest")
+            httpPost.Headers.Add("Cookie", Cookies)
+            Dim poststr As Stream = httpPost.GetRequestStream()
+            poststr.Write(byteData, 0, byteData.Length)
+            poststr.Flush()
+            poststr.Close()
+            Dim res As String = New StreamReader(httpPost.GetResponse().GetResponseStream()).ReadToEnd()
+            If res.Contains("{""status"": ""ok""}") Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Public Function GetDate() As String
+        Try
+            Dim httpPost = DirectCast(WebRequest.Create("https://www.instagram.com/accounts/access_tool/?__a=1"), HttpWebRequest)
+            httpPost.KeepAlive = True
+            httpPost.UserAgent = user_agent
+            httpPost.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+            httpPost.Headers.Add("Cookie", Cookies)
+            Dim res As String = New StreamReader(httpPost.GetResponse().GetResponseStream()).ReadToEnd()
+            If res.Contains("timestamp") Then
+                Dim ts As Double = Regex.Match(res, """timestamp"":(.*?)},").Groups(1).Value
+                Return UnixToDate(ts)
+            Else
+                Return res
+            End If
+        Catch ex As Exception
+            Return ex.Message
+        End Try
+    End Function
+
+    Public Function GetFormerEmails(withdate As Boolean) As String
+        Try
+            Dim httpPost = DirectCast(WebRequest.Create("https://www.instagram.com/accounts/access_tool/former_emails?__a=1"), HttpWebRequest)
+            httpPost.KeepAlive = True
+            httpPost.UserAgent = user_agent
+            httpPost.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+            httpPost.Headers.Add("Cookie", Cookies)
+            Dim res As String = New StreamReader(httpPost.GetResponse().GetResponseStream()).ReadToEnd()
+            If res.Contains("timestamp") Then
+                Dim emails As String = ""
+                Dim matches As MatchCollection = Regex.Matches(res, "{""text"":""(.*?)"",""timestamp"":(.*?)}")
+                For Each match As Match In matches
+                    Dim email As String = match.Groups(1).Value
+                    Dim time As String = UnixToDate(match.Groups(2).Value)
+                    If withdate Then
+                        emails += email & " : " & time & vbCrLf
+                    Else
+                        emails += email & vbCrLf
+                    End If
+                Next
+
+                Return emails
+            Else
+                Return res
+            End If
+        Catch ex As Exception
+            Return ex.Message
+        End Try
+    End Function
+
+    Public Function Get_Usernames_TopSearch(query As String) As List(Of String)
+        Dim users As New List(Of String)
+        Try
+            If (Cookies.Length = 0) Then
+            Else
+                Dim httpPost = DirectCast(WebRequest.Create($"https://www.instagram.com/web/search/topsearch/?query={query}"), HttpWebRequest)
+                httpPost.Method = "GET"
+                httpPost.KeepAlive = True
+                httpPost.UserAgent = user_agent
+                httpPost.Headers.Add("X-Instagram-AJAX", "1")
+                httpPost.Headers.Add("x-requested-with", "XMLHttpRequest")
+                'Get Response
+                Dim res As String = New StreamReader(httpPost.GetResponse().GetResponseStream()).ReadToEnd()
+                Dim matches As MatchCollection = Regex.Matches(res, """username"": ""(.*?)"",")
+                For Each match As Match In matches
+                    users.Add(match.Groups(1).Value)
+                Next
+                Return users
+            End If
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
+    Private Function UnixToDate(UnixTime As String) As String
+        Dim dd As Double = UnixTime
+        Dim nDateTime As System.DateTime = New System.DateTime(1970, 1, 1, 0, 0, 0, 0)
+        nDateTime = nDateTime.AddSeconds(dd)
+        Return nDateTime.ToString()
+    End Function
+
+#End Region
+
+
     'RXLib v2.4
 
 #Region "Added By Ahmed Al-Jabari - https://www.instagram.com/De4dot"
