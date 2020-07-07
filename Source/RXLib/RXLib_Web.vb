@@ -12,6 +12,13 @@ Imports System.Windows.Forms
 Public Class RXLib_Web
     Private Shared Cookies As String
     Private firstname, email, user As String
+
+
+    'RXLib v2.5
+
+    'Changelogs:
+    '- Bypass New Instagram Password (Web)
+
     'RxLib v2.4.1
 #Region "By Raghad @69v2"
 
@@ -1010,13 +1017,17 @@ Public Class RXLib_Web
 
 
     End Function
+
+    'RXLib v2.5 (Bypass Password)
     Public Function Get_Account_Cookies(Username As String, Password As String) As String
 
         Try
             Dim csrftoken As String = get_token()
+            Dim nx = New DateTime(1970, 1, 1)
+            Dim ts = DateTime.UtcNow - nx
+            Dim TimeStamp As Integer = Convert.ToInt32(ts.TotalSeconds).ToString()
 
-
-            Dim postData As String = "username=" & Username & "&password=" & Password
+            Dim postData As String = $"username={Username}&enc_password=#PWD_INSTAGRAM_BROWSER:0:{TimeStamp}:{Password}"
             Dim en As New UTF8Encoding
             Dim byteData As Byte() = en.GetBytes(postData)
 
@@ -1062,10 +1073,16 @@ Public Class RXLib_Web
 
     End Function
     'RXLib v1.0
+
+    'RXLib v2.5 (Bypass Password)
     Public Function Login(Username As String, Password As String) As Boolean
         Try
             Dim csrftoken As String = get_token()
-            Dim postData As String = "username=" & Username & "&password=" & Password
+            Dim nx = New DateTime(1970, 1, 1)
+            Dim ts = DateTime.UtcNow - nx
+            Dim TimeStamp As Integer = Convert.ToInt32(ts.TotalSeconds).ToString()
+
+            Dim postData As String = $"username={Username}&enc_password=#PWD_INSTAGRAM_BROWSER:0:{TimeStamp}:{Password}"
             Dim tempcook As New CookieContainer
             Dim en As New UTF8Encoding
             Dim byteData As Byte() = en.GetBytes(postData)

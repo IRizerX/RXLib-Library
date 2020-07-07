@@ -7,7 +7,7 @@
     <ProjectGuid>{1A84FC4F-D569-40FF-8A55-0206C1CD403D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>RXLib</RootNamespace>
-    <AssemblyName>RXLib 2.4.1</AssemblyName>
+    <AssemblyName>RXLib 2.5</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -20,7 +20,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>RXLib 2.4.1.xml</DocumentationFile>
+    <DocumentationFile>RXLib 2.5.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -29,7 +29,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>RXLib 2.4.1.xml</DocumentationFile>
+    <DocumentationFile>RXLib 2.5.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
